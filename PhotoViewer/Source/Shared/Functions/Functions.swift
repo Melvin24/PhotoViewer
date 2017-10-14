@@ -1,0 +1,24 @@
+//
+//  Functions.swift
+//  PhotoViewer
+
+import Foundation
+
+/// Returns class name as String .
+///
+/// For loading xibs it's useful to reference the xib name which is
+/// based off of a class name but in swift this would end up returning
+/// something like `PhotoViewer.MyClass`.
+///
+/// - parameter type: The type who's name we want to retrieve
+///
+/// - returns: A Class Name
+public func classNameFromType(_ type: AnyObject.Type) -> String {
+    let components = NSStringFromClass(type).components(separatedBy: ".")
+    
+    if components.count == 2 {
+        return components[1]
+    } else {
+        return components[0]
+    }
+}
