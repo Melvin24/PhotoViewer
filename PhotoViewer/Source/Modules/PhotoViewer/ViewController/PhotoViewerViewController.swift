@@ -13,6 +13,7 @@ class PhotoViewerViewController: UIViewController {
         super.viewDidLoad()
         
         collectionView.register(nib: PhotoViewerCell.self)
+        collectionView.register(nib: PhotoViewerSearchHeaderView.self, ofKind: UICollectionElementKindSectionHeader)
         
     }
 
