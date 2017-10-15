@@ -10,4 +10,11 @@ import UIKit
 
 class PhotoViewerSearchHeaderView: UICollectionReusableView {
     
+    @IBOutlet weak var searchTextField: UITextField!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        searchTextField.placeholder = Strings.searchBarPlaceholderName
+    }
 }

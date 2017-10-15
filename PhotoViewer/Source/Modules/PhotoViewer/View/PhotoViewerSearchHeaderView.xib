@@ -28,6 +28,9 @@
                 <constraint firstItem="H40-ZU-xRh" firstAttribute="centerX" secondItem="dd5-en-xSM" secondAttribute="centerX" id="Y0h-d1-qVZ"/>
                 <constraint firstItem="H40-ZU-xRh" firstAttribute="centerY" secondItem="dd5-en-xSM" secondAttribute="centerY" id="zrD-Rd-RpA"/>
             </constraints>
+            <connections>
+                <outlet property="searchTextField" destination="H40-ZU-xRh" id="wKw-Vf-XtI"/>
+            </connections>
             <point key="canvasLocation" x="60" y="65.5"/>
         </collectionReusableView>
     </objects>

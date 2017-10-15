@@ -15,6 +15,12 @@ class PhotoViewerViewController: UIViewController {
         collectionView.register(nib: PhotoViewerCell.self)
         collectionView.register(nib: PhotoViewerSearchHeaderView.self, ofKind: UICollectionElementKindSectionHeader)
         
+        let interactor = PhotoViewerInteractor(withRequest: FlickrPhotoNetworking.fetchFlickerPhotos(forSearchTerm: "melvin", session: .shared))
+        
+        interactor.fetchData { data, error in
+            print("")
+        }
+        
     }
 
 }
