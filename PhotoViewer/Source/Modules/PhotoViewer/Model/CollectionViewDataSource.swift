@@ -6,6 +6,7 @@ import UIKit
 
 class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
     
+    @IBOutlet weak var viewController: PhotoViewerViewController!
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,23 +22,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JGP-vV-du6">
-                                <rect key="frame" x="87.5" y="233.5" width="200" height="200"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cookpadLogo" translatesAutoresizingMaskIntoConstraints="NO" id="JhJ-Le-fdm">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="200" id="8kV-9r-Dek"/>
-                                            <constraint firstAttribute="width" constant="200" id="e7j-aJ-Tgs"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cookpad_logo" translatesAutoresizingMaskIntoConstraints="NO" id="JhJ-Le-fdm">
+                                <rect key="frame" x="87" y="233" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="2CO-Hc-xPf"/>
+                                    <constraint firstAttribute="width" secondItem="JhJ-Le-fdm" secondAttribute="height" multiplier="1:1" id="zK6-CL-rsp"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="JGP-vV-du6" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1WP-jG-SRG"/>
-                            <constraint firstItem="JGP-vV-du6" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="vhW-Lr-XSC"/>
+                            <constraint firstItem="JhJ-Le-fdm" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="CPM-8F-VtB"/>
+                            <constraint firstItem="JhJ-Le-fdm" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="fFh-0Y-J28"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -47,6 +43,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cookpadLogo" width="1200" height="630"/>
+        <image name="cookpad_logo" width="240" height="240"/>
     </resources>
 </document>

@@ -26,7 +26,7 @@ class FlickrPhotoNetworking {
     /// A request signature used to make a task for fetching video match info.
     public typealias Request = (@escaping Completion) throws -> Task
     
-    static func fetchFlickerPhotos(forSearchTerm searchTerm: String, session: URLSession) -> Request {
+    static func fetchFlickrPhotos(forSearchTerm searchTerm: String, session: URLSession) -> Request {
         
         return { completion in
             
@@ -60,8 +60,8 @@ class FlickrPhotoNetworking {
     
     private static func decode(jsonObject: AnyObject) throws -> [Mapper.Object] {
         let decoder = FlickrPhotoObjectMapper()
-        let flickerPhoto = try decoder.decode(JSON: jsonObject)
-        return [flickerPhoto]
+        let flickrPhotos = try decoder.decode(JSON: jsonObject)
+        return flickrPhotos
     }
 
     private static func jsonObject(forData data: Data) -> AnyObject? {

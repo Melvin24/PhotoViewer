@@ -6,6 +6,7 @@ import UIKit
 
 class CollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
+    @IBOutlet weak var viewController: PhotoViewerViewController!
     
     /// Asks the delegate for the size of the header view in the specified section.
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {

@@ -8,10 +8,12 @@
 
 import Foundation
 
+/// Used for mapping flickr response to a concrete type.
 struct FlickrPhotoObjectMapper {
     
+    /// Flickr API Response Parsing Keys.
     enum Keys: String {
-        case stat, code, message
+        case id, farm, server, secret, stat, code, message, photos, photo
     }
     
     /// API Error codes according to: https://www.flickr.com/services/api/flickr.photos.search.htm
@@ -23,30 +25,56 @@ struct FlickrPhotoObjectMapper {
         case badURL = 116
     }
     
-    enum FlickerPhotoObjectMapperError: Error {
+    /// Object mapper error.
+    enum FlickrPhotoObjectMapperError: Error {
+        
+        /// Failed to unwrap with reason.
         case unwrapError(String)
+        
+        /// Flickr API error with error code.
         case FlickrAPIError(FlickrAPIErrorCode)
+        
     }
-    /// The concrete object for this mapper
+    
+    /// The concrete object for this mapper.
     public typealias Object = FlickrPhoto
     
-    /// Decode the JSON object into the concrete object type. See `Object`
+    /// Decode the JSON object into a FlickrPhoto collection.
     ///
-    /// - Parameter JSON: The JSON to decode
-    /// - Returns: A concrete object.
-    /// - Throws: See `JSONDecodingError`
-    public func decode(JSON: AnyObject) throws -> Object {
+    /// - Parameter JSON: The JSON to decode.
+    /// - Returns: A FlickrPhoto collection.
+    /// - Throws: See `FlickrPhotoObjectMapperError`.
+    public func decode(JSON: AnyObject) throws -> [Object] {
         
         guard let jsonDictionary = JSON as? [String: Any] else {
-            throw FlickerPhotoObjectMapperError.unwrapError("Could not unwrap JSON as \([String: Any].self)")
+            throw FlickrPhotoObjectMapperError.unwrapError("Could not unwrap JSON as \([String: Any].self)")
         }
         
         if let code = jsonDictionary[Keys.code.rawValue] as? Int {
-            throw FlickerPhotoObjectMapperError.FlickrAPIError(FlickrAPIErrorCode(rawValue: code) ?? .unknown)
+            throw FlickrPhotoObjectMapperError.FlickrAPIError(FlickrAPIErrorCode(rawValue: code) ?? .unknown)
         }
         
+        guard let photoDictionary = jsonDictionary[Keys.photos.rawValue] as? [String: Any] else {
+            throw FlickrPhotoObjectMapperError.unwrapError("Could not unwrap photos from JSON as \([String: Any].self)")
+        }
         
+        guard let photos = photoDictionary[Keys.photo.rawValue] as? [[String : Any]] else {
+            throw FlickrPhotoObjectMapperError.unwrapError("Could not unwrap photos from photoDictionary as \([[String: Any]].self)")
+        }
         
-        return FlickrPhoto()
+        return photos.reduce([]) { accumulate, current in
+            
+            guard let photoID = current[Keys.id.rawValue] as? String,
+                  let farm    = current[Keys.farm.rawValue] as? Int ,
+                  let server  = current[Keys.server.rawValue] as? String ,
+                  let secret  = current[Keys.secret.rawValue] as? String else {
+                    return accumulate
+            }
+            
+            let flickrPhoto = FlickrPhoto(id: photoID, farm: String(farm), server: server, secret: secret, size: .mediumRectangle)
+            
+            return accumulate + [flickrPhoto]
+        }
+        
     }
 }

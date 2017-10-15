@@ -12,7 +12,7 @@ class PhotoViewerInteractor: Interactor {
     
     var task: Task?
     
-    typealias RequestType = FlickrPhotoNetworking.Request
+    typealias RequestType = ((String) -> FlickrPhotoNetworking.Request)
     
     let request: RequestType
     
@@ -20,17 +20,25 @@ class PhotoViewerInteractor: Interactor {
         self.request = request
     }
     
-    func fetchData(completion: (FlickrPhoto?, Error?) -> Void) {
+    func fetchData(withArgument argument: String, completion: @escaping ([FlickrPhoto]?, Error?) -> Void) {
         
         guard task == nil || task?.isRunning == false else {
             return
         }
         
-        task = try? request { flickrPhotoObject, error in
-            print("hello")
+        do {
+            
+            let flickrPhotoRequest = request(argument)
+            
+            task = try flickrPhotoRequest { flickrPhotoCollection, error in
+                completion(flickrPhotoCollection, error)
+            }
+            
+            task?.resume()
+            
+        } catch let error {
+            completion(nil, error)
         }
-        
-        task?.resume()
         
     }
     

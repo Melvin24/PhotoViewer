@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A3E72D61F9407B7007360C9 /* PhotoViewerNavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3E72D51F9407B7007360C9 /* PhotoViewerNavigationCoordinator.swift */; };
 		7A5756CC1F923C3E00E816AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A5756BD1F923C3E00E816AF /* Assets.xcassets */; };
 		7A5756CD1F923C3E00E816AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A5756BE1F923C3E00E816AF /* LaunchScreen.storyboard */; };
 		7A5756CE1F923C3E00E816AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5756C01F923C3E00E816AF /* AppDelegate.swift */; };
@@ -32,6 +33,14 @@
 		7A5E0C7E1F92C3080074273A /* FlickrPhotoNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5E0C7C1F92C3080074273A /* FlickrPhotoNetworking.swift */; };
 		7A5E0C811F92C3400074273A /* FlickrPhotoObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5E0C801F92C3400074273A /* FlickrPhotoObjectMapper.swift */; };
 		7A7B70181F9236C6008FC0FA /* PhotoViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7B70171F9236C6008FC0FA /* PhotoViewerTests.swift */; };
+		7AA4AB2D1F93F04E00FC6D1B /* PhotoViewerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA4AB2C1F93F04E00FC6D1B /* PhotoViewerPresenter.swift */; };
+		7AA4AB321F93F38800FC6D1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AA4AB311F93F38800FC6D1B /* Main.storyboard */; };
+		7AA4AB341F93F3A300FC6D1B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA4AB331F93F3A300FC6D1B /* MainViewController.swift */; };
+		7AA4AB371F93FE4B00FC6D1B /* MainNavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA4AB361F93FE4B00FC6D1B /* MainNavigationCoordinator.swift */; };
+		7AA4AB391F93FE8400FC6D1B /* Coordinatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA4AB381F93FE8400FC6D1B /* Coordinatable.swift */; };
+		7AA4AB3C1F93FF4700FC6D1B /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA4AB3B1F93FF4700FC6D1B /* MainPresenter.swift */; };
+		7AA4AB3E1F9400C600FC6D1B /* CanInteractWithPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA4AB3D1F9400C600FC6D1B /* CanInteractWithPresenter.swift */; };
+		7AA4AB411F9402CB00FC6D1B /* UIStoryboard+Instantiate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA4AB401F9402CB00FC6D1B /* UIStoryboard+Instantiate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7A3E72D51F9407B7007360C9 /* PhotoViewerNavigationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewerNavigationCoordinator.swift; sourceTree = "<group>"; };
 		7A5756BD1F923C3E00E816AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A5756BE1F923C3E00E816AF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A5756C01F923C3E00E816AF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +84,14 @@
 		7A7B70131F9236C6008FC0FA /* PhotoViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A7B70171F9236C6008FC0FA /* PhotoViewerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerTests.swift; sourceTree = "<group>"; };
 		7A7B70191F9236C6008FC0FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AA4AB2C1F93F04E00FC6D1B /* PhotoViewerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewerPresenter.swift; sourceTree = "<group>"; };
+		7AA4AB311F93F38800FC6D1B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		7AA4AB331F93F3A300FC6D1B /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		7AA4AB361F93FE4B00FC6D1B /* MainNavigationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationCoordinator.swift; sourceTree = "<group>"; };
+		7AA4AB381F93FE8400FC6D1B /* Coordinatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinatable.swift; sourceTree = "<group>"; };
+		7AA4AB3B1F93FF4700FC6D1B /* MainPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		7AA4AB3D1F9400C600FC6D1B /* CanInteractWithPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanInteractWithPresenter.swift; sourceTree = "<group>"; };
+		7AA4AB401F9402CB00FC6D1B /* UIStoryboard+Instantiate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Instantiate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +112,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A3E72D41F94079B007360C9 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				7A3E72D51F9407B7007360C9 /* PhotoViewerNavigationCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		7A5756BC1F923C3E00E816AF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +143,7 @@
 		7A5756C11F923C3E00E816AF /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				7AA4AB2E1F93F37D00FC6D1B /* Main */,
 				7A5E0C321F92470D0074273A /* PhotoViewer */,
 			);
 			path = Modules;
@@ -147,6 +174,7 @@
 		7A5E0C321F92470D0074273A /* PhotoViewer */ = {
 			isa = PBXGroup;
 			children = (
+				7A3E72D41F94079B007360C9 /* Coordinator */,
 				7A5E0C671F926E130074273A /* Interactor */,
 				7A5E0C331F92470D0074273A /* Model */,
 				7A5E0C351F92470D0074273A /* Presenter */,
@@ -169,6 +197,7 @@
 		7A5E0C351F92470D0074273A /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				7AA4AB2C1F93F04E00FC6D1B /* PhotoViewerPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -203,6 +232,7 @@
 		7A5E0C441F924A5F0074273A /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				7AA4AB3F1F9402B300FC6D1B /* UIStoryboard */,
 				7A5E0C4F1F924DF90074273A /* UICollectionReusableView */,
 				7A5E0C451F924A5F0074273A /* UICollectionView */,
 			);
@@ -232,6 +262,8 @@
 				7A5E0C4D1F924CC30074273A /* Reuseable.swift */,
 				7A5E0C6F1F927A980074273A /* Interactor.swift */,
 				7A5E0C711F927BE70074273A /* Task.swift */,
+				7AA4AB381F93FE8400FC6D1B /* Coordinatable.swift */,
+				7AA4AB3D1F9400C600FC6D1B /* CanInteractWithPresenter.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -321,6 +353,57 @@
 			path = PhotoViewerTests;
 			sourceTree = "<group>";
 		};
+		7AA4AB2E1F93F37D00FC6D1B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				7AA4AB3A1F93FF3E00FC6D1B /* Presenter */,
+				7AA4AB351F93FE3B00FC6D1B /* Coordinator */,
+				7AA4AB2F1F93F37D00FC6D1B /* Storyboard */,
+				7AA4AB301F93F37D00FC6D1B /* ViewController */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		7AA4AB2F1F93F37D00FC6D1B /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				7AA4AB311F93F38800FC6D1B /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		7AA4AB301F93F37D00FC6D1B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7AA4AB331F93F3A300FC6D1B /* MainViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		7AA4AB351F93FE3B00FC6D1B /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				7AA4AB361F93FE4B00FC6D1B /* MainNavigationCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		7AA4AB3A1F93FF3E00FC6D1B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				7AA4AB3B1F93FF4700FC6D1B /* MainPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		7AA4AB3F1F9402B300FC6D1B /* UIStoryboard */ = {
+			isa = PBXGroup;
+			children = (
+				7AA4AB401F9402CB00FC6D1B /* UIStoryboard+Instantiate.swift */,
+			);
+			path = UIStoryboard;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -404,6 +487,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AA4AB321F93F38800FC6D1B /* Main.storyboard in Resources */,
 				7A5E0C3D1F92470D0074273A /* PhotoViewer.storyboard in Resources */,
 				7A5E0C611F9268A10074273A /* Localizable.strings in Resources */,
 				7A5E0C3E1F92470D0074273A /* PhotoViewerCell.xib in Resources */,
@@ -436,15 +520,23 @@
 				7A5756CE1F923C3E00E816AF /* AppDelegate.swift in Sources */,
 				7A5E0C5D1F92688E0074273A /* PhotoViewerSearchHeaderView.swift in Sources */,
 				7A5E0C511F924E010074273A /* UICollectionReusableView+ReuseIdentifier.swift in Sources */,
+				7AA4AB3E1F9400C600FC6D1B /* CanInteractWithPresenter.swift in Sources */,
 				7A5E0C721F927BE70074273A /* Task.swift in Sources */,
 				7A5E0C4B1F924B730074273A /* Functions.swift in Sources */,
 				7A5E0C431F92488F0074273A /* PhotoViewerCell.swift in Sources */,
+				7A3E72D61F9407B7007360C9 /* PhotoViewerNavigationCoordinator.swift in Sources */,
 				7A5E0C691F926E290074273A /* PhotoViewerInteractor.swift in Sources */,
+				7AA4AB2D1F93F04E00FC6D1B /* PhotoViewerPresenter.swift in Sources */,
 				7A5E0C811F92C3400074273A /* FlickrPhotoObjectMapper.swift in Sources */,
 				7A5E0C6E1F927A840074273A /* Presenter.swift in Sources */,
 				7A5E0C3C1F92470D0074273A /* CollectionViewDataSource.swift in Sources */,
+				7AA4AB391F93FE8400FC6D1B /* Coordinatable.swift in Sources */,
+				7AA4AB3C1F93FF4700FC6D1B /* MainPresenter.swift in Sources */,
+				7AA4AB371F93FE4B00FC6D1B /* MainNavigationCoordinator.swift in Sources */,
 				7A5E0C701F927A980074273A /* Interactor.swift in Sources */,
 				7A5E0C471F924A740074273A /* UICollectionView+Register.swift in Sources */,
+				7AA4AB411F9402CB00FC6D1B /* UIStoryboard+Instantiate.swift in Sources */,
+				7AA4AB341F93F3A300FC6D1B /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

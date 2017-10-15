@@ -12,11 +12,13 @@ protocol Interactor: class {
     
     associatedtype Object
     
+    associatedtype Argument
+    
     typealias Completion = (Object?, Error?) -> Void
     
     var task: Task? { get set }
     
-    func fetchData(completion: Completion)
+    func fetchData(withArgument argument: Argument, completion: @escaping Completion)
     
     func invalidateFetch()
     
