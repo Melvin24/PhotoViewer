@@ -11,6 +11,8 @@ class PhotoViewerViewController: UIViewController, CanInteractWithPresenter, Can
     
     @IBOutlet weak var searchTextField: UITextField!
         
+    @IBOutlet weak var collectionViewContainerView: UIView!
+    
     weak var statusView: UIView?
     
     weak var statusContainerView: UIView?
@@ -22,7 +24,7 @@ class PhotoViewerViewController: UIViewController, CanInteractWithPresenter, Can
         
         searchTextField.placeholder = Strings.searchBarPlaceholderName
         
-        statusContainerView = view
+        statusContainerView = collectionViewContainerView
         
         collectionView.register(nib: PhotoViewerCell.self)
     }

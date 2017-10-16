@@ -1,10 +1,31 @@
 /* 
   Localizable.strings
   PhotoViewer
-
-  Created by John, Melvin (Associate Software Developer) on 14/10/2017.
-  Copyright © 2017 John, Melvin (Associate Software Developer). All rights reserved.
 */
 
-/* Application name */
-"photo-viewer.search-bar.placeholder" = "Search";
+/// Search bar placeholder.
+"photo-viewer.search-bar.placeholder.text" = "Search";
+
+/// Flicker api unavailable.
+"flickr-api-unavailable.reason" = "The Flickr service is unavailable, please try again later.";
+
+/// Flicker api key invalid.
+"flickr-api-key-invalid.reason" = "Oops, looks like the Flickr API key is invalid or expired.";
+
+/// Flicker api bad request.
+"flickr-api-bad-request.reason" = "Oops, the Flickr API did not understand the request.";
+
+/// Flicker api bad response.
+"flickr-api-bad-response.reason" = "Oops, the Flickr service returned data the app did not understand.";
+
+/// App is having trouble building request for Flickr API.
+"app-bad-flickr-api-request.reason" = "Oops, the app is unable to make a request to the Flickr API.";
+
+/// Unexpected error.
+"unexpected-error.reason" = "Oops, an unexpected error encountered.";
+
+/// No network connection.
+"no-network-connection.reason" = "Looks like you have no network connection, Please try again.";
+
+/// No Flickr Photos found.
+"no-flickr-photos.reason" = "Oops, didn't find any photos to show you.";

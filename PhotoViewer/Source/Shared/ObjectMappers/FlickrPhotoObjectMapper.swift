@@ -32,7 +32,7 @@ struct FlickrPhotoObjectMapper {
         case unwrapError(String)
         
         /// Flickr API error with error code.
-        case FlickrAPIError(FlickrAPIErrorCode)
+        case flickrAPIError(FlickrAPIErrorCode)
         
     }
     
@@ -51,7 +51,7 @@ struct FlickrPhotoObjectMapper {
         }
         
         if let code = jsonDictionary[Keys.code.rawValue] as? Int {
-            throw FlickrPhotoObjectMapperError.FlickrAPIError(FlickrAPIErrorCode(rawValue: code) ?? .unknown)
+            throw FlickrPhotoObjectMapperError.flickrAPIError(FlickrAPIErrorCode(rawValue: code) ?? .unknown)
         }
         
         guard let photoDictionary = jsonDictionary[Keys.photos.rawValue] as? [String: Any] else {

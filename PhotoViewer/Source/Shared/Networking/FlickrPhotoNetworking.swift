@@ -14,6 +14,7 @@ class FlickrPhotoNetworking {
         case unableToBuildURL
         case noData
         case unableToParseData
+        case noConnection
     }
     
     static let apiKey = "c262e55489a26702151250891dad37ce"
@@ -35,6 +36,11 @@ class FlickrPhotoNetworking {
             }
             
             return session.dataTask(with: flickrURL) { data, response, error in
+                
+                guard error?._code != NSURLErrorTimedOut && error?._code != NSURLErrorNotConnectedToInternet else {
+                    completion([], FlickrPhotoNetworkingError.noConnection)
+                    return
+                }
                 
                 guard let data = data else {
                     completion([], FlickrPhotoNetworkingError.noData)

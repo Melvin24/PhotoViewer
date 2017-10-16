@@ -45,35 +45,48 @@
                                     <constraint firstItem="Zh0-M6-Jir" firstAttribute="width" secondItem="o6m-o8-h3a" secondAttribute="width" multiplier="0.7" id="um8-wB-laM"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mj7-mk-kDD">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UaF-Bh-68P">
                                 <rect key="frame" x="0.0" y="70" width="375" height="597"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mj7-mk-kDD">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="597"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1MJ-wh-udb">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="VNI-ix-wRW" id="oWC-H9-JPH"/>
+                                            <outlet property="delegate" destination="qOe-i1-a7A" id="Rnx-X0-baZ"/>
+                                        </connections>
+                                    </collectionView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1MJ-wh-udb">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                                <connections>
-                                    <outlet property="dataSource" destination="VNI-ix-wRW" id="oWC-H9-JPH"/>
-                                    <outlet property="delegate" destination="qOe-i1-a7A" id="Rnx-X0-baZ"/>
-                                </connections>
-                            </collectionView>
+                                <constraints>
+                                    <constraint firstItem="mj7-mk-kDD" firstAttribute="top" secondItem="UaF-Bh-68P" secondAttribute="top" id="9bO-Oa-npm"/>
+                                    <constraint firstAttribute="bottom" secondItem="mj7-mk-kDD" secondAttribute="bottom" id="HuQ-Fz-nuI"/>
+                                    <constraint firstItem="mj7-mk-kDD" firstAttribute="leading" secondItem="UaF-Bh-68P" secondAttribute="leading" id="Xbh-4o-FWE"/>
+                                    <constraint firstAttribute="trailing" secondItem="mj7-mk-kDD" secondAttribute="trailing" id="Z6A-J5-ngG"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="mj7-mk-kDD" secondAttribute="trailing" id="GID-I2-lRK"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mj7-mk-kDD" secondAttribute="bottom" id="GOy-ji-V9t"/>
-                            <constraint firstItem="mj7-mk-kDD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="P0X-Ef-omZ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UaF-Bh-68P" secondAttribute="bottom" id="C3U-w4-I5x"/>
+                            <constraint firstAttribute="trailing" secondItem="UaF-Bh-68P" secondAttribute="trailing" id="RvZ-qf-Z5L"/>
+                            <constraint firstItem="UaF-Bh-68P" firstAttribute="top" secondItem="o6m-o8-h3a" secondAttribute="bottom" id="WCW-CI-LIf"/>
+                            <constraint firstItem="UaF-Bh-68P" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="aRx-r7-ta1"/>
                             <constraint firstAttribute="trailing" secondItem="o6m-o8-h3a" secondAttribute="trailing" id="dOT-g4-8GK"/>
                             <constraint firstItem="o6m-o8-h3a" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="hil-qQ-mgt"/>
                             <constraint firstItem="o6m-o8-h3a" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="u35-Av-npO"/>
-                            <constraint firstItem="mj7-mk-kDD" firstAttribute="top" secondItem="o6m-o8-h3a" secondAttribute="bottom" id="xwf-Td-4Ya"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="mj7-mk-kDD" id="eiY-vy-AAz"/>
+                        <outlet property="collectionViewContainerView" destination="UaF-Bh-68P" id="YTz-W9-zTA"/>
                         <outlet property="searchTextField" destination="Zh0-M6-Jir" id="sXk-RR-oRb"/>
                     </connections>
                 </viewController>
