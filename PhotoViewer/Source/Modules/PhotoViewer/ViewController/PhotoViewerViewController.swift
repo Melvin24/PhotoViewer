@@ -27,7 +27,21 @@ class PhotoViewerViewController: UIViewController, CanInteractWithPresenter, Can
         statusContainerView = collectionViewContainerView
         
         collectionView.register(nib: PhotoViewerCell.self)
+
     }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        switch traitCollection.forceTouchCapability {
+        case .available:
+            registerForPreviewing(with: self, sourceView: view)
+        default:
+            return
+        }
+        
+    }
+    
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
@@ -51,6 +65,10 @@ class PhotoViewerViewController: UIViewController, CanInteractWithPresenter, Can
         collectionView.performBatchUpdates({ [weak self] in
             self?.collectionView.reloadSections(IndexSet(integer: 0))
         }, completion: nil)
+    }
+    
+    func presentViewController(_ viewController: UIViewController) {
+        present(viewController, animated: true, completion: nil)
     }
 }
 

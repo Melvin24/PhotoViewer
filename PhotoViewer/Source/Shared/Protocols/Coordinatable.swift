@@ -21,6 +21,6 @@ public protocol Coordinatable {
     /// - parameter destination: The destination object.
     ///
     /// - throws: If the coordination fails.
-    func prepareForNavigation<From, To>(source: From, destination: To) throws
+    func prepareForNavigation<From, To>(source: From, destination: To, userInfo: Any?) throws
     
 }

@@ -10,7 +10,7 @@ import Foundation
 
 class PhotoViewerNavigationCoordinator: Coordinatable {
     
-    func prepareForNavigation<From, To>(source: From, destination: To) throws {
+    func prepareForNavigation<From, To>(source: From, destination: To, userInfo: Any?) throws {
         
         guard let destination = destination as? PhotoViewerViewController else {
             throw CoordinateError.unsupported("Coordination isnt supported")
@@ -27,6 +27,3 @@ class PhotoViewerNavigationCoordinator: Coordinatable {
         destination.presenter = presenter
     }
 }
-
-//,
-//let destination = navigationController.topViewController as? PhotoViewerViewController

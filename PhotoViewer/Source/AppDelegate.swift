@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let mainViewController = UIStoryboard.instantiateViewControllerFromStoryboardWithName(MainViewController.Storyboard.name)
         let navigationCoordinator = MainNavigationCoordinator()
         
-        try? navigationCoordinator.prepareForNavigation(source: window, destination: mainViewController)
+        try? navigationCoordinator.prepareForNavigation(source: window, destination: mainViewController, userInfo: nil)
         
         window = mainWindow
         window?.rootViewController = mainViewController

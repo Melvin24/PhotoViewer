@@ -26,7 +26,7 @@ class MainPresenter: Presenter {
         
         let navigationCoordinator = PhotoViewerNavigationCoordinator()
         
-        try? navigationCoordinator.prepareForNavigation(source: viewController, destination: viewController)
+        try? navigationCoordinator.prepareForNavigation(source: viewController, destination: viewController, userInfo: nil)
         
     }
 }

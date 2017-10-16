@@ -35,6 +35,17 @@ class PhotoViewerPresenter: Presenter {
         }
     }
     
+    func detailedPhotoViewerViewController(with image: UIImage) -> UIViewController? {
+        
+        let coordinator = DetailedPhotoViewerNavigationCoordinator()
+        
+        let destination = UIStoryboard.instantiateViewControllerFromStoryboardWithName(DetailedPhotoViewerViewController.Storyboard.name)
+        
+        try? coordinator.prepareForNavigation(source: self.viewController, destination: destination, userInfo: image)
+        
+        return destination
+    }
+    
     func loadingView() -> UIView {
         return UIView.loadViewFromNib(as: LoadingView.self)
     }

@@ -49,4 +49,24 @@ class CollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollectionVi
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let flickrPhotos = viewController.presenter.flickrPhotos
+        
+        guard indexPath.row < flickrPhotos.count else {
+            return
+        }
+        
+        guard let image = flickrPhotos[indexPath.row].image else {
+            return
+        }
+        
+        guard let detailedPhotoViewController = viewController.presenter.detailedPhotoViewerViewController(with: image) else {
+            return
+        }
+        
+        viewController.presentViewController(detailedPhotoViewController)
+        
+    }
+    
 }
