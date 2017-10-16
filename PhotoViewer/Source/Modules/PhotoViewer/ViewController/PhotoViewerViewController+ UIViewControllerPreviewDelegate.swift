@@ -1,10 +1,6 @@
 //
 //  PhotoViewerViewController+ UIViewControllerPreviewDelegate.swift
 //  PhotoViewer
-//
-//  Created by John, Melvin (Associate Software Developer) on 16/10/2017.
-//  Copyright © 2017 John, Melvin (Associate Software Developer). All rights reserved.
-//
 
 import UIKit
 
@@ -17,17 +13,16 @@ extension PhotoViewerViewController: UIViewControllerPreviewingDelegate {
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
         
-        guard let indexPath = collectionView.indexPathForItem(at: location) else {
+        let collectionViewLocation = collectionView.convert(location, from: view)
+        
+        guard let indexPath = collectionView.indexPathForItem(at: collectionViewLocation),
+              let cell = collectionView?.cellForItem(at: indexPath) else {
             return nil
         }
         
         let flickrPhotos = presenter.flickrPhotos
 
         guard indexPath.row < flickrPhotos.count else {
-            return nil
-        }
-        
-        guard let cell = collectionView?.cellForItem(at: indexPath) else {
             return nil
         }
 
@@ -49,4 +44,3 @@ extension PhotoViewerViewController: UIViewControllerPreviewingDelegate {
     }
     
 }
-

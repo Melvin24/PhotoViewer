@@ -87,5 +87,3 @@ extension PhotoViewerViewController: UITextFieldDelegate {
     }
     
 }
-
-
