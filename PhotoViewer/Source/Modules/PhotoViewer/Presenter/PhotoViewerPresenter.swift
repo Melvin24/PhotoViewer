@@ -6,7 +6,7 @@
 //  Copyright © 2017 John, Melvin (Associate Software Developer). All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class PhotoViewerPresenter: Presenter {
     
@@ -22,12 +22,21 @@ class PhotoViewerPresenter: Presenter {
     }
 
     func fetchPhotos(forSearchTerm searchTerm: String) {
+        self.viewController?.presenterWillUpdateContent()
         interactor.fetchData(withArgument: searchTerm) { [weak self] flickrPhotos, error in
             self?.flickrPhotos = flickrPhotos ?? []
-            
-            DispatchQueue.main.sync {
-                self?.viewController?.collectionView.reloadData()
-            }
+            self?.viewController?.presenterDidUpdateContent()
         }
     }
+    
+    func loadingView() -> UIView {
+        return UIView.loadViewFromNib(as: LoadingView.self)
+    }
+    
+    
+//    func errorView(forError error: Error) -> UIView {
+//        
+//        
+//        
+//    }
 }

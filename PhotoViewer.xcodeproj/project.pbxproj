@@ -11,6 +11,12 @@
 		7A3E72DA1F949D57007360C9 /* PhotoViewerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3E72D91F949D57007360C9 /* PhotoViewerLayout.swift */; };
 		7A3E72DC1F94E587007360C9 /* PresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3E72DB1F94E587007360C9 /* PresenterDelegate.swift */; };
 		7A3E72DE1F94E5DD007360C9 /* PhotoViewerViewController+PresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3E72DD1F94E5DD007360C9 /* PhotoViewerViewController+PresenterDelegate.swift */; };
+		7A3E72E11F94FDE6007360C9 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3E72E01F94FDE6007360C9 /* ErrorView.swift */; };
+		7A3E72E31F94FE04007360C9 /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A3E72E21F94FE04007360C9 /* ErrorView.xib */; };
+		7A3E72E51F950252007360C9 /* CanShowStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3E72E41F950252007360C9 /* CanShowStatusView.swift */; };
+		7A3E72E71F9504C9007360C9 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3E72E61F9504C9007360C9 /* LoadingView.swift */; };
+		7A3E72E91F9504E8007360C9 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A3E72E81F9504E8007360C9 /* LoadingView.xib */; };
+		7A3E72EC1F950637007360C9 /* UIView+Initialize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3E72EB1F950637007360C9 /* UIView+Initialize.swift */; };
 		7A5756CC1F923C3E00E816AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A5756BD1F923C3E00E816AF /* Assets.xcassets */; };
 		7A5756CD1F923C3E00E816AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A5756BE1F923C3E00E816AF /* LaunchScreen.storyboard */; };
 		7A5756CE1F923C3E00E816AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5756C01F923C3E00E816AF /* AppDelegate.swift */; };
@@ -59,6 +65,12 @@
 		7A3E72D91F949D57007360C9 /* PhotoViewerLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewerLayout.swift; sourceTree = "<group>"; };
 		7A3E72DB1F94E587007360C9 /* PresenterDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterDelegate.swift; sourceTree = "<group>"; };
 		7A3E72DD1F94E5DD007360C9 /* PhotoViewerViewController+PresenterDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PhotoViewerViewController+PresenterDelegate.swift"; sourceTree = "<group>"; };
+		7A3E72E01F94FDE6007360C9 /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		7A3E72E21F94FE04007360C9 /* ErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
+		7A3E72E41F950252007360C9 /* CanShowStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanShowStatusView.swift; sourceTree = "<group>"; };
+		7A3E72E61F9504C9007360C9 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		7A3E72E81F9504E8007360C9 /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		7A3E72EB1F950637007360C9 /* UIView+Initialize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Initialize.swift"; sourceTree = "<group>"; };
 		7A5756BD1F923C3E00E816AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A5756BE1F923C3E00E816AF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A5756C01F923C3E00E816AF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +134,25 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		7A3E72DF1F94FDBB007360C9 /* StatusView */ = {
+			isa = PBXGroup;
+			children = (
+				7A3E72E01F94FDE6007360C9 /* ErrorView.swift */,
+				7A3E72E21F94FE04007360C9 /* ErrorView.xib */,
+				7A3E72E61F9504C9007360C9 /* LoadingView.swift */,
+				7A3E72E81F9504E8007360C9 /* LoadingView.xib */,
+			);
+			path = StatusView;
+			sourceTree = "<group>";
+		};
+		7A3E72EA1F950607007360C9 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				7A3E72EB1F950637007360C9 /* UIView+Initialize.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
 		7A5756BC1F923C3E00E816AF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +185,7 @@
 		7A5756C91F923C3E00E816AF /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				7A3E72DF1F94FDBB007360C9 /* StatusView */,
 				7A5E0C7F1F92C32B0074273A /* ObjectMappers */,
 				7A5E0C791F92C3080074273A /* Entities */,
 				7A5E0C491F924B650074273A /* Functions */,
@@ -234,6 +266,7 @@
 		7A5E0C441F924A5F0074273A /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				7A3E72EA1F950607007360C9 /* UIView */,
 				7AA4AB3F1F9402B300FC6D1B /* UIStoryboard */,
 				7A5E0C4F1F924DF90074273A /* UICollectionReusableView */,
 				7A5E0C451F924A5F0074273A /* UICollectionView */,
@@ -267,6 +300,7 @@
 				7AA4AB381F93FE8400FC6D1B /* Coordinatable.swift */,
 				7AA4AB3D1F9400C600FC6D1B /* CanInteractWithPresenter.swift */,
 				7A3E72DB1F94E587007360C9 /* PresenterDelegate.swift */,
+				7A3E72E41F950252007360C9 /* CanShowStatusView.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -491,9 +525,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AA4AB321F93F38800FC6D1B /* Main.storyboard in Resources */,
+				7A3E72E91F9504E8007360C9 /* LoadingView.xib in Resources */,
 				7A5E0C3D1F92470D0074273A /* PhotoViewer.storyboard in Resources */,
 				7A5E0C611F9268A10074273A /* Localizable.strings in Resources */,
 				7A5E0C3E1F92470D0074273A /* PhotoViewerCell.xib in Resources */,
+				7A3E72E31F94FE04007360C9 /* ErrorView.xib in Resources */,
 				7A5756CC1F923C3E00E816AF /* Assets.xcassets in Resources */,
 				7A5756CD1F923C3E00E816AF /* LaunchScreen.storyboard in Resources */,
 			);
@@ -517,8 +553,11 @@
 				7A5E0C7E1F92C3080074273A /* FlickrPhotoNetworking.swift in Sources */,
 				7A5E0C7D1F92C3080074273A /* FlickrPhoto.swift in Sources */,
 				7A5E0C661F926A120074273A /* Strings.swift in Sources */,
+				7A3E72E51F950252007360C9 /* CanShowStatusView.swift in Sources */,
 				7A5E0C411F9247700074273A /* CollectionViewDelegate.swift in Sources */,
+				7A3E72E11F94FDE6007360C9 /* ErrorView.swift in Sources */,
 				7A5E0C4E1F924CC30074273A /* Reuseable.swift in Sources */,
+				7A3E72EC1F950637007360C9 /* UIView+Initialize.swift in Sources */,
 				7A5756CE1F923C3E00E816AF /* AppDelegate.swift in Sources */,
 				7A3E72DA1F949D57007360C9 /* PhotoViewerLayout.swift in Sources */,
 				7A3E72DE1F94E5DD007360C9 /* PhotoViewerViewController+PresenterDelegate.swift in Sources */,
@@ -540,6 +579,7 @@
 				7A5E0C701F927A980074273A /* Interactor.swift in Sources */,
 				7A5E0C471F924A740074273A /* UICollectionView+Register.swift in Sources */,
 				7AA4AB411F9402CB00FC6D1B /* UIStoryboard+Instantiate.swift in Sources */,
+				7A3E72E71F9504C9007360C9 /* LoadingView.swift in Sources */,
 				7AA4AB341F93F3A300FC6D1B /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

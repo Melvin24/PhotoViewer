@@ -38,7 +38,6 @@
                                         </connections>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="7si-Jo-o7p"/>
                                     <constraint firstItem="Zh0-M6-Jir" firstAttribute="centerY" secondItem="o6m-o8-h3a" secondAttribute="centerY" id="HMs-0m-fKe"/>
@@ -62,7 +61,7 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="mj7-mk-kDD" secondAttribute="trailing" id="GID-I2-lRK"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mj7-mk-kDD" secondAttribute="bottom" id="GOy-ji-V9t"/>

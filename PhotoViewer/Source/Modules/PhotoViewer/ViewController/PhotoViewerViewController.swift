@@ -5,20 +5,26 @@
 
 import UIKit
 
-class PhotoViewerViewController: UIViewController, CanInteractWithPresenter {
+class PhotoViewerViewController: UIViewController, CanInteractWithPresenter, CanShowStatusView {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var searchTextField: UITextField!
+        
+    weak var statusView: UIView?
+    
+    weak var statusContainerView: UIView?
     
     var presenter: PhotoViewerPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        searchTextField.placeholder = Strings.searchBarPlaceholderName
+        
+        statusContainerView = view
+        
         collectionView.register(nib: PhotoViewerCell.self)
-        collectionView.register(nib: PhotoViewerSearchHeaderView.self, ofKind: UICollectionElementKindSectionHeader)
-
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -39,6 +45,11 @@ class PhotoViewerViewController: UIViewController, CanInteractWithPresenter {
         collectionView.collectionViewLayout.invalidateLayout()
     }
 
+    func reloadCollectionView() {
+        collectionView.performBatchUpdates({ [weak self] in
+            self?.collectionView.reloadSections(IndexSet(integer: 0))
+        }, completion: nil)
+    }
 }
 
 extension PhotoViewerViewController: UITextFieldDelegate {
@@ -51,7 +62,7 @@ extension PhotoViewerViewController: UITextFieldDelegate {
         }
         
         self.presenter.fetchPhotos(forSearchTerm: searchTerm)
-        
+        textField.resignFirstResponder()
         return true
     }
     
