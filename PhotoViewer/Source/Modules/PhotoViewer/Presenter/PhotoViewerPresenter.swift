@@ -14,9 +14,20 @@ class PhotoViewerPresenter: Presenter {
     
     var interactor: PhotoViewerInteractor
     
+    var flickrPhotos: [FlickrPhoto] = []
+    
     init(viewController: PhotoViewerViewController, interactor: PhotoViewerInteractor) {
         self.viewController = viewController
         self.interactor = interactor
     }
 
+    func fetchPhotos(forSearchTerm searchTerm: String) {
+        interactor.fetchData(withArgument: searchTerm) { [weak self] flickrPhotos, error in
+            self?.flickrPhotos = flickrPhotos ?? []
+            
+            DispatchQueue.main.sync {
+                self?.viewController?.collectionView.reloadData()
+            }
+        }
+    }
 }

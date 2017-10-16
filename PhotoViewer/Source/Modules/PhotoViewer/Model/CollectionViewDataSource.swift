@@ -9,29 +9,36 @@ class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
     @IBOutlet weak var viewController: PhotoViewerViewController!
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard section == 1 else {
-            return 0
-        }
-        return 3
+        return viewController.presenter.flickrPhotos.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(type: PhotoViewerCell.self, forIndexPath: indexPath)
+        
+        guard let image = viewController.presenter.flickrPhotos[indexPath.row].image else {
+            return cell
+        }
+
+        cell.imageView.image = image
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         switch kind {
-        case UICollectionElementKindSectionHeader where indexPath.section == 0:
-            return collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader,
+        case UICollectionElementKindSectionHeader:
+            let searchHeaderView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader,
                                                                        type: PhotoViewerSearchHeaderView.self,
                                                                        forIndexPath: indexPath)
+            searchHeaderView.searchTermPhotoHandler = self.viewController
+            
+            return searchHeaderView
         default:
             return UICollectionReusableView()
         }

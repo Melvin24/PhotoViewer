@@ -20,7 +20,17 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="exg-Wm-dkx">
                         <rect key="frame" x="0.0" y="0.0" width="343" height="247"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cookpad_logo" translatesAutoresizingMaskIntoConstraints="NO" id="IQm-OE-zI9">
+                                <rect key="frame" x="0.0" y="0.0" width="343" height="247"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="IQm-OE-zI9" secondAttribute="bottom" id="9Zg-mK-ICE"/>
+                            <constraint firstItem="IQm-OE-zI9" firstAttribute="leading" secondItem="exg-Wm-dkx" secondAttribute="leading" id="QAW-RP-Y3n"/>
+                            <constraint firstItem="IQm-OE-zI9" firstAttribute="top" secondItem="exg-Wm-dkx" secondAttribute="top" id="X16-HX-MC3"/>
+                            <constraint firstAttribute="trailing" secondItem="IQm-OE-zI9" secondAttribute="trailing" id="m9X-8J-VMZ"/>
+                        </constraints>
                     </view>
                 </subviews>
             </view>
@@ -31,7 +41,13 @@
                 <constraint firstItem="exg-Wm-dkx" firstAttribute="leading" secondItem="Jik-ND-9h8" secondAttribute="leading" id="z2h-D6-3RU"/>
             </constraints>
             <size key="customSize" width="343" height="247"/>
+            <connections>
+                <outlet property="imageView" destination="IQm-OE-zI9" id="n9h-Fp-pXM"/>
+            </connections>
             <point key="canvasLocation" x="2.5" y="-80.5"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="cookpad_logo" width="240" height="240"/>
+    </resources>
 </document>

@@ -6,7 +6,7 @@
 //  Copyright © 2017 John, Melvin (Associate Software Developer). All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 /// Used for mapping flickr response to a concrete type.
 struct FlickrPhotoObjectMapper {
@@ -71,9 +71,21 @@ struct FlickrPhotoObjectMapper {
                     return accumulate
             }
             
-            let flickrPhoto = FlickrPhoto(id: photoID, farm: String(farm), server: server, secret: secret, size: .mediumRectangle)
+            var flickrPhoto = FlickrPhoto(id: photoID,
+                                        farm: String(farm),
+                                      server: server,
+                                      secret: secret,
+                                        size: .mediumRectangle,
+                                       image: nil )
+            
+            if let imageURL  = URL(string: flickrPhoto.urlPath),
+               let imageData = try? Data(contentsOf: imageURL),
+               let image     = UIImage(data: imageData) {
+                    flickrPhoto.image = image
+            }
             
             return accumulate + [flickrPhoto]
+            
         }
         
     }

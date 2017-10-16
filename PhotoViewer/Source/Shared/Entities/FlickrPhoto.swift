@@ -2,7 +2,7 @@
 //  FlickrPhoto.swift
 //  PhotoViewer
 
-import Foundation
+import UIKit
 
 /// A struct to represent flickr photo.
 struct FlickrPhoto {
@@ -39,9 +39,12 @@ struct FlickrPhoto {
     /// Photo Size
     var size: Size
     
+    /// Image
+    var image: UIImage?
+    
     /// Photo URL 
     var urlPath: String {
-        return "https://farm\(farm).staticflickr.com/\(server)/\(id)_\(secret)_\(size).jpg"
+        return "https://farm\(farm).staticflickr.com/\(server)/\(id)_\(secret)_\(size.rawValue).jpg"
     }
     
 }
