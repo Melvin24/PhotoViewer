@@ -27,3 +27,6 @@ class PhotoViewerNavigationCoordinator: Coordinatable {
         destination.presenter = presenter
     }
 }
+
+//,
+//let destination = navigationController.topViewController as? PhotoViewerViewController

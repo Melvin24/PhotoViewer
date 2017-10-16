@@ -28,20 +28,5 @@ class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
         
         return cell
     }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        
-        switch kind {
-        case UICollectionElementKindSectionHeader:
-            let searchHeaderView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader,
-                                                                       type: PhotoViewerSearchHeaderView.self,
-                                                                       forIndexPath: indexPath)
-            searchHeaderView.searchTermPhotoHandler = self.viewController
-            
-            return searchHeaderView
-        default:
-            return UICollectionReusableView()
-        }
 
-    }
 }

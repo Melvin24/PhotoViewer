@@ -9,6 +9,8 @@ class PhotoViewerViewController: UIViewController, CanInteractWithPresenter {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var searchTextField: UITextField!
+    
     var presenter: PhotoViewerPresenter!
     
     override func viewDidLoad() {
@@ -39,11 +41,20 @@ class PhotoViewerViewController: UIViewController, CanInteractWithPresenter {
 
 }
 
-extension PhotoViewerViewController: CanSearchPhotosForTerm {
+extension PhotoViewerViewController: UITextFieldDelegate {
     
-    func searchPhotos(forTerm searchTerm: String) {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        guard let searchTerm = textField.text,
+            !searchTerm.isEmpty else {
+                return true
+        }
+        
         self.presenter.fetchPhotos(forSearchTerm: searchTerm)
+        
+        return true
     }
     
 }
+
 

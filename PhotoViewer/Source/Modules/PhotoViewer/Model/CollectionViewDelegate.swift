@@ -16,11 +16,6 @@ class CollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollectionVi
     
     @IBOutlet weak var viewController: PhotoViewerViewController!
     
-    /// Asks the delegate for the size of the header view in the specified section.
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.contentSize.width, height: 50)
-    }
-
     /// Asks the delegate for the spacing between successive items in the rows or columns of a section.
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
