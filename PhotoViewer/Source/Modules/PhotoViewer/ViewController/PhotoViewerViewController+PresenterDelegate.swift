@@ -9,7 +9,9 @@ extension PhotoViewerViewController: PresenterDelegate {
     
     func presenterWillUpdateContent() {
         if !refreshControl.isRefreshing {
-            changeStatusView(with: presenter.loadingView())
+            DispatchQueue.main.async { [weak self] in
+                self?.changeStatusView(with: self?.presenter.loadingView())
+            }
         }
     }
     
