@@ -19,15 +19,46 @@ class PhotoViewerViewController: UIViewController, CanInteractWithPresenter, Can
     
     var presenter: PhotoViewerPresenter!
     
+    /// The control which manages the pull to refresh functionality.
+    lazy var refreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupRefreshController(forCollectionView: collectionView)
+                
         searchTextField.placeholder = Strings.searchBarPlaceholderName
         
         statusContainerView = collectionViewContainerView
         
         collectionView.register(nib: PhotoViewerCell.self)
 
+    }
+    
+    func reloadPhotos() {
+        presenter.fetchPhotos(forSearchTerm: presenter.currentSearchTerm)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        endEditing(for: searchTextField)
+    }
+    
+    func endEditing(for textField: UITextField) {
+        textField.endEditing(true)
+    }
+    
+    func setupRefreshController(forCollectionView collectionView: UICollectionView) {
+        
+        refreshControl.addTarget(self, action: #selector(reloadPhotos), for: .valueChanged)
+
+        collectionView.alwaysBounceVertical = true
+        
+        if #available(iOS 10.0, *) {
+            collectionView.refreshControl = refreshControl
+        } else {
+            collectionView.insertSubview(refreshControl, at: 0)
+        }
+        
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -41,7 +72,6 @@ class PhotoViewerViewController: UIViewController, CanInteractWithPresenter, Can
         }
         
     }
-    
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
@@ -61,10 +91,10 @@ class PhotoViewerViewController: UIViewController, CanInteractWithPresenter, Can
         collectionView.collectionViewLayout.invalidateLayout()
     }
 
-    func reloadCollectionView() {
+    func reloadCollectionView(_ completion: @escaping ((Bool) -> Void)) {
         collectionView.performBatchUpdates({ [weak self] in
             self?.collectionView.reloadSections(IndexSet(integer: 0))
-        }, completion: nil)
+        }, completion: completion)
     }
     
     func presentViewController(_ viewController: UIViewController) {
@@ -82,7 +112,7 @@ extension PhotoViewerViewController: UITextFieldDelegate {
         }
         
         self.presenter.fetchPhotos(forSearchTerm: searchTerm)
-        textField.resignFirstResponder()
+        endEditing(for: textField)
         return true
     }
     

@@ -24,6 +24,11 @@ class PhotoViewerInteractor: Interactor {
         
         do {
             
+            guard !argument.trimmingCharacters(in: .whitespaces).isEmpty else {
+                completion([], nil)
+                return
+            }
+            
             let flickrPhotoRequest = request(argument)
             
             task = try flickrPhotoRequest { flickrPhotoCollection, error in

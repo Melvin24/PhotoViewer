@@ -10,7 +10,7 @@ class CollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollectionVi
     let numberOfItemsPerRowPortrait: CGFloat = 3
     let lineSpacing: CGFloat = 4
     let interitemSpacing: CGFloat = 4
-    let sectionInset = UIEdgeInsets(top: 0, left: 4, bottom: 0, right: 4)
+    let sectionInset = UIEdgeInsets(top: 0, left: 4, bottom: 4, right: 4)
     
     var device = UIDevice.current
     

@@ -5,6 +5,7 @@
 import UIKit
 
 extension PhotoViewerViewController: UIViewControllerPreviewingDelegate {
+    
     @available(iOS 9.0, *)
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
         presentViewController(viewControllerToCommit)

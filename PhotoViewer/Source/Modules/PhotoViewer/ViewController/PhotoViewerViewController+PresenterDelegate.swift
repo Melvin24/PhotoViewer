@@ -6,20 +6,25 @@ import UIKit
 
 extension PhotoViewerViewController: PresenterDelegate {
     
+    
     func presenterWillUpdateContent() {
-        changeStatusView(with: presenter.loadingView())
+        if !refreshControl.isRefreshing {
+            changeStatusView(with: presenter.loadingView())
+        }
     }
     
     func presenterDidUpdateContent() {
         
         var statusView: UIView?
-        if presenter.flickrPhotos.count == 0 {
+        if presenter.flickrPhotos.count == 0, !refreshControl.isRefreshing {
             statusView = presenter.noDataView()
         }
         
         DispatchQueue.main.async { [weak self] in
-            self?.reloadCollectionView()
-            self?.changeStatusView(with: statusView)
+            self?.reloadCollectionView() { [weak self] _ in
+                self?.refreshControl.endRefreshing()
+                self?.changeStatusView(with: statusView)
+            }
         }
     }
     
