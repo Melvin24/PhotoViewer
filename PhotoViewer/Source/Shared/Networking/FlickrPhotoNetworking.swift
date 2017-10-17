@@ -85,7 +85,7 @@ class FlickrPhotoNetworking {
             return nil
         }
         
-        let URLPath = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=\(apiKey)&text=\(escapedTerm)&per_page=20&format=json&nojsoncallback=1"
+        let URLPath = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=\(apiKey)&text=\(escapedTerm)&per_page=30&format=json&nojsoncallback=1"
         
         return URL(string: URLPath)
     }
