@@ -6,14 +6,19 @@ import UIKit
 
 protocol CanShowStatusView: class {
     
+    /// Status view.
     weak var statusView: UIView? { get set }
     
+    /// Container view to add status view.
     weak var statusContainerView: UIView? { get set }
     
 }
 
 extension CanShowStatusView {
     
+    /// Responsible for changing status view. Pass nill to remove current status view.
+    ///
+    /// - Parameter newStatusView: new status view for example an Error View.
     public func changeStatusView(with newStatusView: UIView?) {
         
         self.statusView?.removeFromSuperview()

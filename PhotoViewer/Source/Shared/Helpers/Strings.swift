@@ -4,6 +4,7 @@
 
 import Foundation
 
+/// Struct to represent localized strings. 
 struct Strings {
     
     static var localizedString = {

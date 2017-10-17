@@ -10,6 +10,10 @@ import UIKit
 
 extension PhotoViewerPresenter {
     
+    /// Call this method to obtain a Detailed Photo viewer for a given image.
+    ///
+    /// - Parameter image: Image to show.
+    /// - Returns: DetailedPhotoViewerViewController.
     func detailedPhotoViewerViewController(with image: UIImage) -> UIViewController? {
         
         let coordinator = DetailedPhotoViewerNavigationCoordinator()
@@ -21,10 +25,16 @@ extension PhotoViewerPresenter {
         return destination
     }
     
+    /// Call this method to obtain a loading view.
+    ///
+    /// - Returns: Loading View.
     func loadingView() -> UIView {
         return UIView.loadViewFromNib(as: LoadingView.self)
     }
     
+    /// Call this method to obtain a No Data Error View.
+    ///
+    /// - Returns: An Error View with appropriate label text.
     func noDataView() -> UIView {
         let errorView = errorStatusView()
         errorView.label.text = Strings.noPhotosFound
@@ -33,6 +43,10 @@ extension PhotoViewerPresenter {
         return errorView
     }
     
+    /// Call this method to obtain an Error view for a given Error.
+    ///
+    /// - Parameter error: Error to use, to construct Error View.
+    /// - Returns: Error View with appropriate label text.
     func errorView(forError error: Error) -> UIView {
         
         let errorView = errorStatusView()

@@ -6,7 +6,6 @@ import UIKit
 
 extension PhotoViewerViewController: PresenterDelegate {
     
-    
     func presenterWillUpdateContent() {
         if !refreshControl.isRefreshing {
             DispatchQueue.main.async { [weak self] in

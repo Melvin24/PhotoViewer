@@ -9,12 +9,12 @@ extension UICollectionView {
     /// Convenience function to register cells from nib.
     ///
     /// - parameter nib:    The class type to register. e.g. `MyCellClass.self`
-    /// - parameter bundle: The bundle in which to search for the nib file. If you specify nil, this method looks for the nib file in the main bundle.
+    /// - parameter bundle: Main Bundle.
     public func register(nib: Reuseable.Type, bundle: Bundle? = nil) {
         register(UINib(nibName: classNameFromType(nib), bundle: bundle), forCellWithReuseIdentifier: nib.defaultReuseIdentifier)
     }
     
-    /// Convenience function to unwrap the cell using the defaultReuseIdentifier available on `UICollectionReusableView`.
+    /// Convenience function to obtain dequeued cell using the defaultReuseIdentifier available on `UICollectionReusableView`.
     ///
     /// - parameter type:      The class type, must be a subclass of `UICollectionViewCell`
     /// - parameter indexPath: the currrent indexPath to query the collection view cache

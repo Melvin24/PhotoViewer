@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7A3E72D61F9407B7007360C9 /* PhotoViewerNavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3E72D51F9407B7007360C9 /* PhotoViewerNavigationCoordinator.swift */; };
-		7A3E72DA1F949D57007360C9 /* PhotoViewerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3E72D91F949D57007360C9 /* PhotoViewerLayout.swift */; };
 		7A3E72DC1F94E587007360C9 /* PresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3E72DB1F94E587007360C9 /* PresenterDelegate.swift */; };
 		7A3E72DE1F94E5DD007360C9 /* PhotoViewerViewController+PresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3E72DD1F94E5DD007360C9 /* PhotoViewerViewController+PresenterDelegate.swift */; };
 		7A3E72E11F94FDE6007360C9 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3E72E01F94FDE6007360C9 /* ErrorView.swift */; };
@@ -68,7 +67,6 @@
 
 /* Begin PBXFileReference section */
 		7A3E72D51F9407B7007360C9 /* PhotoViewerNavigationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewerNavigationCoordinator.swift; sourceTree = "<group>"; };
-		7A3E72D91F949D57007360C9 /* PhotoViewerLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewerLayout.swift; sourceTree = "<group>"; };
 		7A3E72DB1F94E587007360C9 /* PresenterDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterDelegate.swift; sourceTree = "<group>"; };
 		7A3E72DD1F94E5DD007360C9 /* PhotoViewerViewController+PresenterDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PhotoViewerViewController+PresenterDelegate.swift"; sourceTree = "<group>"; };
 		7A3E72E01F94FDE6007360C9 /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
@@ -306,7 +304,6 @@
 			children = (
 				7A5E0C391F92470D0074273A /* PhotoViewerCell.xib */,
 				7A5E0C421F92488F0074273A /* PhotoViewerCell.swift */,
-				7A3E72D91F949D57007360C9 /* PhotoViewerLayout.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -620,7 +617,6 @@
 				7A3E72EC1F950637007360C9 /* UIView+Initialize.swift in Sources */,
 				7A5756CE1F923C3E00E816AF /* AppDelegate.swift in Sources */,
 				7A3E72F81F954B2A007360C9 /* DetailedPhotoViewerNavigationCoordinator.swift in Sources */,
-				7A3E72DA1F949D57007360C9 /* PhotoViewerLayout.swift in Sources */,
 				7A3E72DE1F94E5DD007360C9 /* PhotoViewerViewController+PresenterDelegate.swift in Sources */,
 				7A81A3CB1F961142005EE74B /* PhotoViewerPresenter+Helper.swift in Sources */,
 				7A5E0C511F924E010074273A /* UICollectionReusableView+ReuseIdentifier.swift in Sources */,

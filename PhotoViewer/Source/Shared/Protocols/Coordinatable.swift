@@ -12,13 +12,14 @@ public enum CoordinateError: Error {
     
 }
 
-/// Identifies something capable of preparing navigation
+/// Identifies something capable of preparing navigation i.e Dependency Injection.
 public protocol Coordinatable {
     
     /// Prepare the destination for navigation.
     ///
     /// - parameter source:      The source object.
     /// - parameter destination: The destination object.
+    /// - parameter userInfo:    Additional info for preparing for navigation.
     ///
     /// - throws: If the coordination fails.
     func prepareForNavigation<From, To>(source: From, destination: To, userInfo: Any?) throws

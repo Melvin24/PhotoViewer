@@ -6,10 +6,19 @@ import Foundation
 
 class FlickrPhotoNetworking {
     
+    /// Network Error
     enum FlickrPhotoNetworkingError: Error {
+        
+        /// Unable to buld  URL Error
         case unableToBuildURL
+        
+        /// No Data from Flickr API Request.
         case noData
+        
+        /// Failed to Parse Flickr API Response.
         case unableToParseData
+        
+        /// No Network Connection.
         case noConnection
     }
     
@@ -23,6 +32,7 @@ class FlickrPhotoNetworking {
     /// A request signature used to make a task for fetching video match info.
     public typealias Request = (@escaping Completion) throws -> Task
     
+    /// Call this method to obtain a request to fetch flickr photos. 
     static func fetchFlickrPhotos(forSearchTerm searchTerm: String, session: URLSession) -> Request {
         
         return { completion in

@@ -4,14 +4,11 @@
 
 import Foundation
 
-/// A Task represents any syncronus or asyncronus object so we can cancel, suspend and resume.
+/// A Task represents any syncronus or asyncronus object so we can cancel or resume.
 protocol Task {
     
     /// Determines whether the task is running.
     var isRunning: Bool { get }
-    
-    /// Start the task
-    func start()
     
     /// Resume a currently suspended or non-started task.
     func resume()
@@ -22,11 +19,6 @@ protocol Task {
 }
 
 extension URLSessionTask: Task {
-    
-    func start() {
-        resume()
-    }
-
     
     public var isRunning: Bool {
         return state == .running

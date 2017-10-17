@@ -7,16 +7,20 @@ import UIKit
 
 class PhotoViewerViewController: UIViewController, CanInteractWithPresenter, CanShowStatusView {
 
+    /// Collection View
     @IBOutlet weak var collectionView: UICollectionView!
     
+    /// Search text field.
     @IBOutlet weak var searchTextField: UITextField!
-        
+    
+    /// Collection view container view.
     @IBOutlet weak var collectionViewContainerView: UIView!
     
     weak var statusView: UIView?
     
     weak var statusContainerView: UIView?
     
+    /// Associated presenter.
     var presenter: PhotoViewerPresenter!
     
     /// The control which manages the pull to refresh functionality.
@@ -35,14 +39,19 @@ class PhotoViewerViewController: UIViewController, CanInteractWithPresenter, Can
 
     }
     
+    /// Responsible for reloading current Flickr data.
     func reloadPhotos() {
         presenter.fetchPhotos(forSearchTerm: presenter.currentSearchTerm)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
         endEditing(for: searchTextField)
     }
     
+    /// Causes a given text field to resign the first responder status.
+    ///
+    /// - Parameter textField: Text Field to resign the first responder.
     func endEditing(for textField: UITextField) {
         textField.endEditing(true)
     }
@@ -76,7 +85,7 @@ class PhotoViewerViewController: UIViewController, CanInteractWithPresenter, Can
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         
-        /// On Transition animation finish invalidate collection view layout
+        /// On Transition animation finish invalidate collection view layout, to refresh layout.
         coordinator.animate(alongsideTransition: nil) { [weak self] _ in
             
             guard let collectionView = self?.collectionView else {
@@ -91,6 +100,7 @@ class PhotoViewerViewController: UIViewController, CanInteractWithPresenter, Can
         collectionView.collectionViewLayout.invalidateLayout()
     }
 
+    /// Responsible for reloading collection view by performing batch update. 
     func reloadCollectionView(_ completion: @escaping ((Bool) -> Void)) {
         collectionView.performBatchUpdates({ [weak self] in
             self?.collectionView.reloadSections(IndexSet(integer: 0))

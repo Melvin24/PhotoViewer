@@ -4,13 +4,13 @@
 
 import UIKit
 
+/// Implementation for 3D Touch.
 extension PhotoViewerViewController: UIViewControllerPreviewingDelegate {
     
     @available(iOS 9.0, *)
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
         presentViewController(viewControllerToCommit)
     }
-
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
         
@@ -35,7 +35,6 @@ extension PhotoViewerViewController: UIViewControllerPreviewingDelegate {
             return nil
         }
 
-        
         detailedPhotoViewController.preferredContentSize = CGSize(width: 0.0, height: 300)
         
         previewingContext.sourceRect = cell.frame

@@ -8,8 +8,8 @@ extension UIStoryboard {
     
     /// Convenience function to initialise the initial view controller from a storyboard. Use type-safe enum identifiers instead of strings.
     ///
-    /// - parameter name:   The enum of the storyboard view controller identifier.
-    /// - parameter bundle: Used to resolve references to resources, typically images, in the archived controllers represented in the storyboard file.
+    /// - parameter name:   The enum of the storyboard view controller.
+    /// - parameter bundle: Main Bundle.
     ///
     /// - returns: The initial view controller of storyboard or nil if it cannot be located.
     public class func instantiateViewControllerFromStoryboardWithName<T: RawRepresentable>(_ name: T, bundle: Bundle? = nil) -> UIViewController? where T.RawValue == String {
@@ -19,7 +19,7 @@ extension UIStoryboard {
     /// Convenience method to load a storyboard from a type-safe enum. This avoids spelling mistakes.
     ///
     /// - parameter name:   The enum of the storyboard name.
-    /// - parameter bundle: Used to resolve references to resources, typically images, in the archived controllers represented in the storyboard file.
+    /// - parameter bundle: Main Bundle.
     ///
     /// - returns: A new storyboard object, or nil if the method cannot find the specified storyboard file.
     public class func storyboardWithName<T: RawRepresentable>(_ name: T, bundle: Bundle? = nil) -> UIStoryboard where T.RawValue == String {

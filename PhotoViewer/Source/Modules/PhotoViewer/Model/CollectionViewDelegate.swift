@@ -6,12 +6,13 @@ import UIKit
 
 class CollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    let numberOfItemsPerRowLandscape: CGFloat = 4
-    let numberOfItemsPerRowPortrait: CGFloat = 3
     let lineSpacing: CGFloat = 4
-    let interitemSpacing: CGFloat = 4
+    let interItemSpacing: CGFloat = 4
+    let numberOfItemsPerRowPortrait: CGFloat = 3
+    let numberOfItemsPerRowLandscape: CGFloat = 4
     let sectionInset = UIEdgeInsets(top: 0, left: 4, bottom: 4, right: 4)
     
+    /// Current device, used to check for orientation.
     var device = UIDevice.current
     
     @IBOutlet weak var viewController: PhotoViewerViewController!
@@ -23,7 +24,7 @@ class CollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollectionVi
     
     /// Asks the delegate for the spacing between successive rows or columns of a section.
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return interitemSpacing
+        return interItemSpacing
     }
     
     /// Asks the delegate for the margins to apply to content in the specified section.
@@ -35,7 +36,7 @@ class CollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollectionVi
         
         let maxContentWidth = viewController.view.frame.width
         
-        let availableContentWidth = maxContentWidth - (sectionInset.left + sectionInset.right + interitemSpacing)
+        let availableContentWidth = maxContentWidth - (sectionInset.left + sectionInset.right + interItemSpacing)
         
         guard availableContentWidth > 0 else {
             return .zero
@@ -43,9 +44,9 @@ class CollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollectionVi
         
         let itemsPerRow = device.orientation.isLandscape ? numberOfItemsPerRowLandscape : numberOfItemsPerRowPortrait
         
-        let maxWidthPerItem = availableContentWidth/itemsPerRow
+        let maxWidthAndHeightPerItem = availableContentWidth/itemsPerRow
         
-        return CGSize(width: maxWidthPerItem, height: maxWidthPerItem)
+        return CGSize(width: maxWidthAndHeightPerItem, height: maxWidthAndHeightPerItem)
         
     }
     

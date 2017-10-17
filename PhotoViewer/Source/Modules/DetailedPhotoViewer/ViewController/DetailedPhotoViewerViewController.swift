@@ -6,10 +6,13 @@ import UIKit
 
 class DetailedPhotoViewerViewController: UIViewController, CanInteractWithPresenter {
     
+    /// Outlet for imageView.
     @IBOutlet weak var imageView: UIImageView!
     
+    /// Close Button.
     @IBOutlet weak var closeButton: UIButton!
     
+    /// Associated presenter.
     var presenter: DetailedPhotoViewerPresenter!
     
     override func viewDidLoad() {
@@ -34,6 +37,7 @@ class DetailedPhotoViewerViewController: UIViewController, CanInteractWithPresen
 
 extension DetailedPhotoViewerViewController {
     
+    /// Storyboard name
     enum Storyboard: String {
         case name = "DetailedPhotoViewer"
     }

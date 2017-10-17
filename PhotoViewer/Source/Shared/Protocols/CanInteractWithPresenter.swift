@@ -4,11 +4,12 @@
 
 import Foundation
 
+/// An interface which defines the basic setup of the viewController.
 protocol CanInteractWithPresenter: class {
     
     associatedtype PresenterType: Presenter
     
-    /// The preseer of the presentable.
+    /// Associated presenter.
     var presenter: PresenterType! { get }
     
 }
